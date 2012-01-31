@@ -1,4 +1,4 @@
-//= require jquery.dataTables.min
+//= require jquery.dataTables
 //= require jquery.datatables.fnSetFilteringDelay
 
 root = exports ? this
@@ -36,7 +36,7 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
       when "sSortDir_0"
         sSortDir = dataObj.value;
       else
-        # console.log(dataObj.name);
+        console.log(dataObj.name, dataObj.value);
   );
 
   $.each(aoData, (index, dataObj) ->
