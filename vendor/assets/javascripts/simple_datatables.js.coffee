@@ -36,7 +36,7 @@ root.simpleDatatables = ( sSource, aoData, fnCallback ) ->
       when "sSortDir_0"
         sSortDir = dataObj.value;
       else
-        console.log(dataObj.name, dataObj.value);
+        # console.log(dataObj.name, dataObj.value);
   );
 
   $.each(aoData, (index, dataObj) ->
