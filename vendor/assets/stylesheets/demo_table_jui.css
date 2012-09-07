@@ -30,10 +30,6 @@
 /*
  * jQuery UI specific styling
  */
- 
- body {
- 	display: none;
- }
 
 .paging_two_button .ui-button {
 	float: left;
