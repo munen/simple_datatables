@@ -1,6 +1,7 @@
 = Simple Datatables
 
-Connects two awesome plugins - Datatables for Jquery and Meta Search together for Rails 3.1
+Connects two awesome plugins - Datatables for Jquery and Meta Search together
+for Rails 3.1+
 
 == Install
 
@@ -8,7 +9,7 @@ Add the following to your Gemfile to install simple datatables:
 
   gem 'simple_datatables'
 
-After bundle install add this line to rails 3.1 assets pipeline and restart server:
+After bundle install add this line to rails 3.1+ assets pipeline and restart server:
 
   //= require simple_datatables
 
@@ -19,15 +20,15 @@ Installation completed.
 There are two ways to map awesome Datatables plugin request fields for Rails.
 
 * First is to convert request on the server side
-* Second is to prepare correct request on the client side  
+* Second is to prepare correct request on the client side
 
-This gem provides interface for the second way. 
+This gem provides interface for the second way.
 To use it you should do the following easy three steps:
 
 Create simple meta_search and will_paginate (optionally) controller action as usual and add ".datatables" format
 
   respond_to :html, :datatables
-  
+
   def search
     @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page=>params[:per_page])
     respond_with @products
@@ -38,18 +39,18 @@ Use standard datatables initializer options for creating table:
 * bServerSide: true
 * sAjaxSource: path to your controller
 * fnServerData: point to simpleDatatables function
-* aoColumns: you *should* define all searchable/fiterable sName attributes here. Use format as used in meta_search (with underscores) 
+* aoColumns: you *should* define all searchable/fiterable sName attributes here. Use format as used in meta_search (with underscores)
 
 Create Jsonify view with column values for columns listed in aoColumns. See example for clarification.
 
 This gem uses:
 * meta_search for nice search and sort request syntax mapping
-* jsonify for simple output generation 
+* jsonify for simple output generation
 
 This gem provides integration with:
 * will_paginate for nice pagination request syntax mapping
 
-Gem works only with rails 3.1.
+Gem works with rails 3.1 and 3.2
 
 Gem includes datatables library and fnSetFilteringDelay plugin so you haven't include it by yourself.
 
@@ -94,7 +95,7 @@ The following code will show products list datatables. Manufacturer is belongs_t
 In your controller:
 
   respond_to :html, :datatables
-  
+
   # GET /products/search
   def search
     @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page=>params[:per_page])
@@ -114,7 +115,7 @@ In your index view:
       %tr
         %th= Product.human_attribute_name :name
         %th= Product.human_attribute_name :manufacturer
-  
+
     %tbody
 
 
